@@ -5,7 +5,7 @@ const getUserInfo = async (req, res) => {
   try {
     const { data } = await axios.get(
       `https://api.github.com/users/${username}`,
-      {headers: {'Authorization': 'token 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'}}
+      {headers: {'Authorization': `token ${process.env.token}`}}
     );
     res.status(200).json({ ...data });
   } catch (error) {
@@ -18,7 +18,7 @@ const getUserRepos = async (req, res) => {
   try {
     const { data } = await axios.get(
       `https://api.github.com/users/${username}/repos`,
-      {headers: {'Authorization': 'token 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'}}
+      {headers: {'Authorization': `token ${process.env.token}`}}
     );
 
     const page = parseInt(req.query.page) || 1;
