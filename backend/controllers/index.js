@@ -5,7 +5,7 @@ const getUserInfo = async (req, res) => {
   try {
     const { data } = await axios.get(
       `https://api.github.com/users/${username}`,
-      {headers: {'Authorization': `token ${process.env.token}`}}
+      {headers: {'Authorization': `Bearer ${process.env.TOKEN}`}}
     );
     res.status(200).json({ ...data });
   } catch (error) {
@@ -18,7 +18,7 @@ const getUserRepos = async (req, res) => {
   try {
     const { data } = await axios.get(
       `https://api.github.com/users/${username}/repos`,
-      {headers: {'Authorization': `token ${process.env.token}`}}
+      {headers: {'Authorization': `Bearer ${process.env.TOKEN}`}}
     );
 
     const page = parseInt(req.query.page) || 1;
