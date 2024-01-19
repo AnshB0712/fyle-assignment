@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub User Searching</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="/logo.png" alt="Logo" class="header__logo" />
+        <form class="search">
+          <input
+            type="text"
+            class="search__field"
+            placeholder="Search GitHub User"
+          />
+          <button class="btn search__btn">
+            <svg class="search__icon">
+              <use href="/icons.svg#icon-search"></use>
+            </svg>
+            <span>Search</span>
+          </button>
+        </form>
+      </header>
+
+      <div class="user">
+        <div class="message">
+          <div>
+            <svg>
+              <use href="/icons.svg#icon-smile"></use>
+            </svg>
+          </div>
+          <p>Start by searching for anshb0712. Have fun!</p>
+        </div>
+      </div>
+
+      <div class="repos_container" style="display: none">
+        <div class="repos_counter">
+          <h2 class="heading--2" style="margin-bottom: 0">GitHub Repos</h2>
+
+          <form class="number_form">
+            <label for="numberInput">Number Of Repos Per Page: </label>
+            <input
+              class="number__field"
+              type="number"
+              id="numberInput"
+              name="numberInput"
+              required
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="repos"></div>
+      </div>
+
+      <div class="pagination"></div>
+    </div>
+    <script type="module" src="src/js/controller.js"></script>
+  </body>
+</html>
