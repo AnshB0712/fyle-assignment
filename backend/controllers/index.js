@@ -4,7 +4,8 @@ const getUserInfo = async (req, res) => {
   const { username } = req.params;
   try {
     const { data } = await axios.get(
-      `https://api.github.com/users/${username}`
+      `https://api.github.com/users/${username}`,
+      {headers: {'User-Agent': 'anshb0712'}}
     );
     res.status(200).json({ ...data });
   } catch (error) {
@@ -16,7 +17,8 @@ const getUserRepos = async (req, res) => {
   const { username } = req.params;
   try {
     const { data } = await axios.get(
-      `https://api.github.com/users/${username}/repos`
+      `https://api.github.com/users/${username}/repos`,
+      {headers: {'User-Agent': 'anshb0712'}}
     );
 
     const page = parseInt(req.query.page) || 1;
