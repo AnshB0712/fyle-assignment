@@ -198,6 +198,10 @@ body {
   transform: translateY(0);
 }
 
+.disabled_btn{
+  opacity: .3;
+}
+
 .btn--tiny:not(:last-child) {
   margin-right: 0.3rem;
 }
@@ -402,7 +406,7 @@ body {
   background-color: #f9f5f3;
   padding: 2rem 4rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   place-items: center;
   gap: 1rem;
 }
@@ -424,6 +428,8 @@ body {
 }
 
 .repos_topics {
+  display: flex;
+  gap: 8px;
   border-top: 1px solid #2b3137;
   margin-top: 1rem;
   padding-top: 1rem;

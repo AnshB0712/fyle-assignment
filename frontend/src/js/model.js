@@ -21,6 +21,7 @@ export const getUser = async (user) => {
       throw new Error(data?.message ?? "Error occured while fetching User");
 
     state.user = data;
+    
   } catch (error) {
     throw error;
   }
@@ -32,6 +33,8 @@ export const getUserRepos = async (
   pageSize = state.pagination.itemsPerPage
 ) => {
   if (!user) return;
+  
+  console.log(page,pageSize)
 
   try {
     const res = await fetch(
@@ -46,6 +49,7 @@ export const getUserRepos = async (
 
     state.repos = data.data;
     state.pagination = data.metadata;
+    
   } catch (error) {
     throw error;
   }
