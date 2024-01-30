@@ -7,8 +7,9 @@ import userView from "./views/userView.js";
 
 const loadUserData = async (loaderFn, renderFn, dataKey) => {
   renderFn.renderSpinner();
+    const additionalParams = (dataKey === 'repos') ? [1, 10] : [];
   try {
-    await loaderFn(userSearchView.getQuery());
+    await loaderFn(userSearchView.getQuery(),...additionalParams);
     renderFn.render(model.state[dataKey]);
     paginationView.render(model.state.pagination);
     itemsPerPageCounter.syncData(model.state.pagination);
